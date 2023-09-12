@@ -10,7 +10,7 @@
   
 ## História do projeto
 - A Dindin API é um sistema de controle de gastos pessoais. Desenvolvido como resultado do Desafio do Módulo 3 do curso de Desenvolvimento de Software com foco em Backend da Cubos Academy.
-- 
+  
 ## Autores
 - Mario Frederico Castilho - Desenvolvedor BackEnd - <a href="https://github.com/mfcastilho" target="_blank">Repositório</a>
 - Mário Silva - Desenvolvedor BackEnd - <a href="https://github.com/mariosilva81" target="_blank">Repositório</a>
