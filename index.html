@@ -12,8 +12,22 @@
     </header>
 
     <div class="container">
+        <h2>Introdução à Dindin API</h2>
+
+        <p>A Dindin API é um sistema de controle de gastos pessoais desenvolvido como resultado do Desafio do Módulo 3 do curso de Desenvolvimento de Software com foco em Backend da Cubos Academy. Seu principal objetivo é proporcionar uma oportunidade prática para que os estudantes possam aplicar as técnicas e conceitos aprendidos em sala de aula. Embora esta API possa parecer simples em sua funcionalidade, ela representa um modelo útil para estudantes que desejam aprofundar seus conhecimentos em desenvolvimento de software, especialmente no contexto de backend.</p>
+
+        <p>Aqui, você encontrará informações detalhadas sobre todos os endpoints disponíveis, permitindo que você compreenda e explore como esta API pode ser usada para criar aplicativos de controle financeiro pessoal. Neste guia, iremos abordar os recursos disponíveis e como utilizá-los para melhorar suas habilidades de desenvolvimento de software.</p>
+
+        <span> <strong>Desenvolvedores: </strong> <br> <span>Mario Frederico Castilho (<a href="https://github.com/mfcastilho" target="_blank">github</a>) <br> Mario Silva (<a href="https://github.com/mariosilva81" target="_blank">github</a>)</span> </span>
+        <br>
+        <br>
+        <span> <strong>Repositório do Projeto: </strong> <br> <a href="https://github.com/mfcastilho/dindin-api" target="_blank">link</a> </span>
+       
+        
+        
+
         <h2>Cadastro de Usuário</h2>
-        <h3>POST /usuario</h3>
+        <h3>POST https://dindin-api.cyclic.cloud/usuario</h3>
         <p>Este endpoint é usado para cadastrar um novo usuário no sistema.</p>
         <h3>Requisição</h3>
         <pre>
@@ -37,7 +51,7 @@
         </pre>
 
         <h2>Login do Usuário</h2>
-        <h3>POST /login</h3>
+        <h3>POST https://dindin-api.cyclic.cloud/login</h3>
         <p>Este endpoint permite que um usuário faça login no sistema.</p>
         <h3>Requisição</h3>
         <pre>
@@ -52,83 +66,86 @@
         <pre>
             <code>
 {
-    "token": "token_de_autenticacao"
+    "usuario": {
+        "id": 3,
+        "nome": "João Silva",
+        "email": "joao@example.com"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjk0NTQyNzEyLCJleHAiOjE2OTQ2MjkxMTJ9.oOyebU8i04jtI1lm1HPOw6z1unqUe4keogH9pyo3JJQ"
 }
             </code>
         </pre>
 
         <h2>Detalhar Perfil do Usuário Logado</h2>
-<h3>Endpoint: GET /usuario</h3>
-<p>Retorna os dados do perfil do usuário logado.</p>
+        <h3>Endpoint: GET https://dindin-api.cyclic.cloud/usuario</h3>
+        <p>Retorna os dados do perfil do usuário logado.</p>
 
-<h3>Requisição:</h3>
-<pre><code>Método: GET</code></pre>
+        <h3>Requisição:</h3>
+        <pre><code>Método: GET</code></pre>
 
-<h3>Resposta:</h3>
-<p>Sucesso (HTTP Status 200 / 201 / 204):</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Sucesso (HTTP Status 200 / 201 / 204):</p>
+        <pre><code>json
 {
     "id": 1,
     "nome": "José",
     "email": "jose@email.com"
 }
-</code></pre>
+        </code></pre>
 
-<p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
-<pre><code>json
+        <p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
+        <pre><code>json
 {
     "mensagem": "Para acessar este recurso, um token de autenticação válido deve ser enviado."
 }
-</code></pre>
+        </code></pre>
 
+        <h2>Editar Perfil do Usuário Logado</h2>
+        <h3>Endpoint: PUT https://dindin-api.cyclic.cloud/usuario</h3>
+        <p>Permite que o usuário logado atualize seu próprio perfil.</p>
 
-<h2>Editar Perfil do Usuário Logado</h2>
-<h3>Endpoint: PUT /usuario</h3>
-<p>Permite que o usuário logado atualize seu próprio perfil.</p>
-
-<h3>Requisição:</h3>
-<pre><code>Método: PUT</code></pre>
-<p>Corpo da Requisição (JSON):</p>
-<pre><code>json
+        <h3>Requisição:</h3>
+        <pre><code>Método: PUT</code></pre>
+        <p>Corpo da Requisição (JSON):</p>
+        <pre><code>json
 {
     "nome": "José de Abreu",
     "email": "jose_abreu@email.com",
     "senha": "j4321"
 }
-</code></pre>
+        </code></pre>
 
-<h3>Resposta:</h3>
-<p>Sucesso (HTTP Status 200 / 201 / 204):</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Sucesso (HTTP Status 200 / 201 / 204):</p>
+        <pre><code>json
 // Sem conteúdo no corpo (body) da resposta
-</code></pre>
+        </code></pre>
 
-<p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
-<pre><code>json
+        <p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
+        <pre><code>json
 {
     "mensagem": "O e-mail informado já está sendo utilizado por outro usuário."
 }
-</code></pre>
+        </code></pre>
 
+        <h2>Listar Categorias</h2>
+        <h3>GET https://dindin-api.cyclic.cloud/categoria</h3>
+        <p>Essa rota permite ao usuário logado listar todas as categorias cadastradas.</p>
 
-<h2>Listar Categorias</h2>
-<h3>GET /categoria</h3>
-<p>Essa rota permite ao usuário logado listar todas as categorias cadastradas.</p>
+        <h3>Requisição:</h3>
+        <pre><code>Método: GET</code></pre>
+        <p>Parâmetros de rota: Nenhum</p>
+        <p>Parâmetros de consulta: Nenhum</p>
+        <p>Corpo da requisição: Nenhum</p>
 
-<h3>Requisição:</h3>
-<pre><code>Método: GET</code></pre>
-<p>Parâmetros de rota: Nenhum</p>
-<p>Parâmetros de consulta: Nenhum</p>
-<p>Corpo da requisição: Nenhum</p>
-
-<h3>Resposta:</h3>
-<p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um array de objetos representando as categorias cadastradas.</p>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-GET /categoria
-</code></pre>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um array de objetos representando as categorias cadastradas.</p>
+        <p>Exemplo de requisição:</p>
+        <pre><code>json
+GET https://dindin-api.cyclic.cloud/categoria
+        </code></pre>
+        <p>Exemplo de resposta de sucesso:</p>
+        <pre><code>json
 HTTP Status 200 / 201 / 204
 [
     {
@@ -140,26 +157,26 @@ HTTP Status 200 / 201 / 204
         "descricao": "Mercado"
     }
 ]
-</code></pre>
-<p>Em caso de falha (HTTP Status 400 / 401 / 403 / 404), o corpo da resposta conterá uma mensagem de erro apropriada.</p>
+        </code></pre>
+        <p>Em caso de falha (HTTP Status 400 / 401 / 403 / 404), o corpo da resposta conterá uma mensagem de erro apropriada.</p>
 
-<h2>Filtrar Transações por Categoria</h2>
-<h3>Na funcionalidade de listagem de transações do usuário logado (GET /transacao), agora é possível filtrar as transações com base nas categorias informadas.</h3>
+        <h2>Filtrar Transações por Categoria</h2>
+        <h3>Na funcionalidade de listagem de transações do usuário logado (GET /transacao), agora é possível filtrar as transações com base nas categorias informadas.</h3>
 
-<h3>Requisição:</h3>
-<pre><code>Método: GET</code></pre>
-<p>Parâmetros de rota: Nenhum</p>
-<p>Parâmetros de consulta:</p>
-<pre><code>filtro (array de strings, opcional): Um array contendo a descrição de uma ou mais categorias pelas quais as transações devem ser filtradas.</code></pre>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-GET /transacao?filtro[]=roupas&filtro[]=salarios
-</code></pre>
+        <h3>Requisição:</h3>
+        <pre><code>Método: GET</code></pre>
+        <p>Parâmetros de rota: Nenhum</p>
+        <p>Parâmetros de consulta:</p>
+        <pre><code>filtro (array de strings, opcional): Um array contendo a descrição de uma ou mais categorias pelas quais as transações devem ser filtradas.</code></pre>
+        <p>Exemplo de requisição:</p>
+        <pre><code>json
+GET https://dindin-api.cyclic.cloud/transacao?filtro[]=roupas&filtro[]=salarios
+        </code></pre>
 
-<h3>Resposta:</h3>
-<p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um array de objetos representando as transações que atendem aos critérios de filtro.</p>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um array de objetos representando as transações que atendem aos critérios de filtro.</p>
+        <p>Exemplo de resposta de sucesso:</p>
+        <pre><code>json
 HTTP Status 200 / 201 / 204
 [
     {
@@ -183,21 +200,19 @@ HTTP Status 200 / 201 / 204
         "categoria_nome": "Salários"
     }
 ]
-</code></pre>
-<p>Em caso de falha, o corpo da resposta conterá a seguinte mensagem: "Categoria não encontrda".</p>
-
-        
+        </code></pre>
+        <p>Em caso de falha, o corpo da resposta conterá a seguinte mensagem: "Categoria não encontrada".</p>
 
         <h2>Listar Transações do Usuário Logado</h2>
-<h3>Endpoint: GET /transacao</h3>
-<p>Lista todas as transações associadas ao usuário logado.</p>
+        <h3>Endpoint: GET https://dindin-api.cyclic.cloud/transacao</h3>
+        <p>Lista todas as transações associadas ao usuário logado.</p>
 
-<h3>Requisição:</h3>
-<pre><code>Método: GET</code></pre>
+        <h3>Requisição:</h3>
+        <pre><code>Método: GET</code></pre>
 
-<h3>Resposta:</h3>
-<p>Sucesso (HTTP Status 200 / 201 / 204):</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Sucesso (HTTP Status 200 / 201 / 204):</p>
+        <pre><code>json
 [
     {
         "id": 1,
@@ -220,22 +235,23 @@ HTTP Status 200 / 201 / 204
         "categoria_nome": "Salário"
     }
 ]
-</code></pre>
+        </code></pre>
 
-<p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
-<pre><code>json
+        <p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
+        <pre><code>json
 {
     "mensagem": "Para acessar este recurso, um token de autenticação válido deve ser enviado."
 }
-</code></pre>
-<h2>Registrar Nova Transação</h2>
-<h3>Endpoint: POST /transacao</h3>
-<p>Permite que o usuário logado registre uma nova transação.</p>
+        </code></pre>
 
-<h3>Requisição:</h3>
-<pre><code>Método: POST</code></pre>
-<p>Corpo da Requisição (JSON):</p>
-<pre><code>json
+        <h2>Registrar Nova Transação</h2>
+        <h3>Endpoint: POST https://dindin-api.cyclic.cloud/transacao</h3>
+        <p>Permite que o usuário logado registre uma nova transação.</p>
+
+        <h3>Requisição:</h3>
+        <pre><code>Método: POST</code></pre>
+        <p>Corpo da Requisição (JSON):</p>
+        <pre><code>json
 {
     "tipo": "saida",
     "descricao": "Compras no mercado",
@@ -243,11 +259,11 @@ HTTP Status 200 / 201 / 204
     "data": "2022-03-10",
     "categoria_id": 2
 }
-</code></pre>
+        </code></pre>
 
-<h3>Resposta:</h3>
-<p>Sucesso (HTTP Status 200 / 201 / 204):</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Sucesso (HTTP Status 200 / 201 / 204):</p>
+        <pre><code>json
 {
     "id": 4,
     "tipo": "saida",
@@ -258,33 +274,33 @@ HTTP Status 200 / 201 / 204
     "categoria_id": 2,
     "categoria_nome": "Mercado"
 }
-</code></pre>
+        </code></pre>
 
-<p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
-<pre><code>json
+        <p>Falha na Validação (HTTP Status 400 / 401 / 403 / 404):</p>
+        <pre><code>json
 {
     "mensagem": "Erro de validação: O campo 'data' é obrigatório."
 }
-</code></pre>
+        </code></pre>
 
-<h2>Detalhar uma Transação do Usuário Logado</h2>
-<h3>GET /transacao/:id</h3>
-<p>Essa rota permite ao usuário logado obter detalhes de uma transação específica associada a eles.</p>
+        <h2>Detalhar uma Transação do Usuário Logado</h2>
+        <h3>GET https://dindin-api.cyclic.cloud/transacao/:id</h3>
+        <p>Essa rota permite ao usuário logado obter detalhes de uma transação específica associada a eles.</p>
 
-<h3>Requisição:</h3>
-<pre><code>Método: GET</code></pre>
-<p>Parâmetros de rota:</p>
-<pre><code>id (integer): O ID da transação que se deseja detalhar.</code></pre>
-<p>Corpo da requisição: Nenhum</p>
+        <h3>Requisição:</h3>
+        <pre><code>Método: GET</code></pre>
+        <p>Parâmetros de rota:</p>
+        <pre><code>id (integer): O ID da transação que se deseja detalhar.</code></pre>
+        <p>Corpo da requisição: Nenhum</p>
 
-<h3>Resposta:</h3>
-<p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação.</p>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-GET /transacao/2
-</code></pre>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
+        <h3>Resposta:</h3>
+        <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação.</p>
+        <p>Exemplo de requisição:</p>
+        <pre><code>json
+GET https://dindin-api.cyclic.cloud/transacao/2
+        </code></pre>
+        <p>Exemplo de resposta de sucesso:</p>
+        <pre><code>json
 HTTP Status 200 / 201 / 204
 {
     "id": 2,
@@ -295,18 +311,18 @@ HTTP Status 200 / 201 / 204
     "categoria_id": 1,
     "categoria_nome": "Vestuário"
 }
-</code></pre>
+        </code></pre>
 
-<h2>Cadastrar Transação para o Usuário Logado</h2>
-<h3>POST /transacao</h3>
-<p>Essa rota permite ao usuário logado cadastrar uma nova transação associada a eles.</p>
+        <h2>Cadastrar Transação para o Usuário Logado</h2>
+        <h3>POST https://dindin-api.cyclic.cloud/transacao</h3>
+        <p>Essa rota permite ao usuário logado cadastrar uma nova transação associada a eles.</p>
 
-<h3>Requisição:</h3>
-<pre><code>Método: POST</code></pre>
-<p>Parâmetros de rota: Nenhum</p>
-<p>Parâmetros de consulta: Nenhum</p>
-<p>Corpo da requisição:</p>
-<pre><code>json
+        <h3>Requisição:</h3>
+        <pre><code>Método: POST</code></pre>
+        <p>Parâmetros de rota: Nenhum</p>
+        <p>Parâmetros de consulta: Nenhum</p>
+        <p>Corpo da requisição:</p>
+        <pre><code>json
 {
     "tipo": "entrada",
     "descricao": "Salário",
@@ -314,13 +330,13 @@ HTTP Status 200 / 201 / 204
     "data": "2023-09-15",
     "categoria_id": 2
 }
-</code></pre>
+        </code></pre>
 
-<h3>Resposta:</h3>
-<p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação recém-cadastrada, incluindo o seu ID.</p>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-POST /transacao
+        <h3>Resposta:</h3>
+        <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação recém-cadastrada, incluindo o seu ID.</p>
+        <p>Exemplo de requisição:</p>
+        <pre><code>json
+POST https://dindin-api.cyclic.cloud/transacao
 {
     "tipo": "entrada",
     "descricao": "Salário",
@@ -328,9 +344,9 @@ POST /transacao
     "data": "2023-09-15",
     "categoria_id": 2
 }
-</code></pre>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
+        </code></pre>
+        <p>Exemplo de resposta de sucesso:</p>
+        <pre><code>json
 HTTP Status 200 / 201 / 204
 {
     "id": 5,
@@ -341,92 +357,76 @@ HTTP Status 200 / 201 / 204
     "categoria_id": 2,
     "categoria_nome": "Salários"
 }
-</code></pre>
+        </code></pre>
 
-<h2>Atualizar Transação do Usuário Logado</h2>
-<h3>PUT /transacao/:id</h3>
-<p>Essa rota permite ao usuário logado atualizar uma transação existente associada a eles.</p>
+        <h2>Atualizar Transação do Usuário Logado</h2>
+        <h3>PUT https://dindin-api.cyclic.cloud/transacao/:id</h3>
+        <p>Essa rota permite ao usuário logado atualizar uma transação existente associada a eles.</p>
 
-<h3>Requisição:</h3>
-<pre><code>Método: PUT</code></pre>
-<p>Parâmetros de rota:</p>
-<pre><code>id (integer): O ID da transação que se deseja atualizar.</code></pre>
-<p>Corpo da requisição:</p>
-<pre><code>json
+        <h3>Requisição:</h3>
+        <pre><code>Método: PUT</code></pre>
+        <p>Parâmetros de rota:</p>
+        <pre><code>id (integer): O ID da transação que se deseja atualizar.</code></pre>
+        <p>Corpo da requisição:</p>
+        <pre><code>json
 {
-	"tipo": "saida",
-	"descricao": "Compra de eletrônicos",
-	"valor": 500.0,
-	"data": "2023-09-20",
-	"categoria_id": 3
+    "tipo": "saida",
+    "descricao": "Compra de eletrônicos",
+    "valor": 500.0,
+    "data": "2023-09-20",
+    "categoria_id": 3
 }
-</code></pre>
+        </code></pre>
 
-<h3>Resposta:</h3>
-<p>Em caso de sucesso, a resposta não terá conteúdo no corpo.</p>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-PUT /transacao/3
+        <h3>Resposta:</h3>
+        <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação atualizada.</p>
+        <p>Exemplo de requisição:</p>
+        <pre><code>json
+PUT https://dindin-api.cyclic.cloud/transacao/5
 {
-	"tipo": "saida",
-	"descricao": "Compra de eletrônicos",
-	"valor": 500.0,
-	"data": "2023-09-20",
-	"categoria_id": 3
+    "tipo": "saida",
+    "descricao": "Compra de eletrônicos",
+    "valor": 500.0,
+    "data": "2023-09-20",
+    "categoria_id": 3
 }
-</code></pre>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
-HTTP Status 204
-</code></pre>
-
-<h2>Excluir Transação do Usuário Logado</h2>
-<h3>DELETE /transacao/:id</h3>
-<p>Essa rota permite ao usuário logado excluir uma transação existente associada a eles.</p>
-
-<h3>Requisição:</h3>
-<pre><code>Método: DELETE</code></pre>
-<p>Parâmetros de rota:</p>
-<pre><code>id (integer): O ID da transação que se deseja excluir.</code></pre>
-<p>Corpo da requisição: Nenhum</p>
-
-<h3>Resposta:</h3>
-<p>Em caso de sucesso, a resposta não terá conteúdo no corpo.</p>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-DELETE /transacao/4
-</code></pre>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
-HTTP Status 204
-</code></pre>
-
-<h2>Obter Extrato de Transações</h2>
-<h3>GET /transacao/extrato</h3>
-<p>Essa rota permite ao usuário logado obter um extrato de todas as suas transações cadastradas.</p>
-
-<h3>Requisição:</h3>
-<pre><code>Método: GET</code></pre>
-<p>Parâmetros de rota: Nenhum</p>
-<p>Parâmetros de consulta: Nenhum</p>
-<p>Corpo da requisição: Nenhum</p>
-
-<h3>Resposta:</h3>
-<p>Em caso de sucesso, o corpo da resposta conterá um objeto com as somas dos valores de transações do tipo "entrada" e "saída".</p>
-<p>Exemplo de requisição:</p>
-<pre><code>json
-GET /transacao/extrato
-</code></pre>
-<p>Exemplo de resposta de sucesso:</p>
-<pre><code>json
-
+        </code></pre>
+        <p>Exemplo de resposta de sucesso:</p>
+        <pre><code>json
+HTTP Status 200 / 201 / 204
 {
-	"entrada": 3500.0,
-	"saida": 800.0
+    "id": 5,
+    "tipo": "saida",
+    "descricao": "Compra de eletrônicos",
+    "valor": 500.0,
+    "data": "2023-09-20",
+    "categoria_id": 3,
+    "categoria_nome": "Eletrônicos"
 }
-</code></pre>
+        </code></pre>
+
+        <h2>Excluir Transação do Usuário Logado</h2>
+        <h3>DELETE https://dindin-api.cyclic.cloud/transacao/:id</h3>
+        <p>Essa rota permite ao usuário logado excluir uma transação existente associada a eles.</p>
+
+        <h3>Requisição:</h3>
+        <pre><code>Método: DELETE</code></pre>
+        <p>Parâmetros de rota:</p>
+        <pre><code>id (integer): O ID da transação que se deseja excluir.</code></pre>
+        <p>Corpo da requisição: Nenhum</p>
+
+        <h3>Resposta:</h3>
+        <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta será vazio.</p>
+        <p>Exemplo de requisição:</p>
+        <pre><code>json
+DELETE https://dindin-api.cyclic.cloud/transacao/5
+        </code></pre>
+        <p>Exemplo de resposta de sucesso:</p>
+        <pre><code>json
+HTTP Status 200 / 201 / 204
+{}
+        </code></pre>
 
     </div>
-    
 </body>
 </html>
