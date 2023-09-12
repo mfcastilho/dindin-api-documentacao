@@ -27,7 +27,7 @@
         
 
         <h2>Cadastro de Usuário</h2>
-        <h3>POST https://dindin-api.cyclic.cloud/usuario</h3>
+        <h3>Endpoint: POST - https://dindin-api.cyclic.cloud/usuario</h3>
         <p>Este endpoint é usado para cadastrar um novo usuário no sistema.</p>
         <h3>Requisição</h3>
         <pre>
@@ -51,7 +51,7 @@
         </pre>
 
         <h2>Login do Usuário</h2>
-        <h3>POST https://dindin-api.cyclic.cloud/login</h3>
+        <h3>Endpoint: POST - https://dindin-api.cyclic.cloud/login</h3>
         <p>Este endpoint permite que um usuário faça login no sistema.</p>
         <h3>Requisição</h3>
         <pre>
@@ -77,7 +77,7 @@
         </pre>
 
         <h2>Detalhar Perfil do Usuário Logado</h2>
-        <h3>Endpoint: GET https://dindin-api.cyclic.cloud/usuario</h3>
+        <h3>Endpoint: GET - https://dindin-api.cyclic.cloud/usuario</h3>
         <p>Retorna os dados do perfil do usuário logado.</p>
 
         <h3>Requisição:</h3>
@@ -101,7 +101,7 @@
         </code></pre>
 
         <h2>Editar Perfil do Usuário Logado</h2>
-        <h3>Endpoint: PUT https://dindin-api.cyclic.cloud/usuario</h3>
+        <h3>Endpoint: PUT - https://dindin-api.cyclic.cloud/usuario</h3>
         <p>Permite que o usuário logado atualize seu próprio perfil.</p>
 
         <h3>Requisição:</h3>
@@ -129,7 +129,7 @@
         </code></pre>
 
         <h2>Listar Categorias</h2>
-        <h3>GET https://dindin-api.cyclic.cloud/categoria</h3>
+        <h3>Endpoint: GET - https://dindin-api.cyclic.cloud/categoria</h3>
         <p>Essa rota permite ao usuário logado listar todas as categorias cadastradas.</p>
 
         <h3>Requisição:</h3>
@@ -142,7 +142,7 @@
         <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um array de objetos representando as categorias cadastradas.</p>
         <p>Exemplo de requisição:</p>
         <pre><code>json
-GET https://dindin-api.cyclic.cloud/categoria
+            Endpoint: GET https://dindin-api.cyclic.cloud/categoria
         </code></pre>
         <p>Exemplo de resposta de sucesso:</p>
         <pre><code>json
@@ -204,7 +204,7 @@ HTTP Status 200 / 201 / 204
         <p>Em caso de falha, o corpo da resposta conterá a seguinte mensagem: "Categoria não encontrada".</p>
 
         <h2>Listar Transações do Usuário Logado</h2>
-        <h3>Endpoint: GET https://dindin-api.cyclic.cloud/transacao</h3>
+        <h3>Endpoint: GET - https://dindin-api.cyclic.cloud/transacao</h3>
         <p>Lista todas as transações associadas ao usuário logado.</p>
 
         <h3>Requisição:</h3>
@@ -245,7 +245,7 @@ HTTP Status 200 / 201 / 204
         </code></pre>
 
         <h2>Registrar Nova Transação</h2>
-        <h3>Endpoint: POST https://dindin-api.cyclic.cloud/transacao</h3>
+        <h3>Endpoint: POST - https://dindin-api.cyclic.cloud/transacao</h3>
         <p>Permite que o usuário logado registre uma nova transação.</p>
 
         <h3>Requisição:</h3>
@@ -284,7 +284,7 @@ HTTP Status 200 / 201 / 204
         </code></pre>
 
         <h2>Detalhar uma Transação do Usuário Logado</h2>
-        <h3>GET https://dindin-api.cyclic.cloud/transacao/:id</h3>
+        <h3>Endpoint: GET https://dindin-api.cyclic.cloud/transacao/:id</h3>
         <p>Essa rota permite ao usuário logado obter detalhes de uma transação específica associada a eles.</p>
 
         <h3>Requisição:</h3>
@@ -297,7 +297,7 @@ HTTP Status 200 / 201 / 204
         <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação.</p>
         <p>Exemplo de requisição:</p>
         <pre><code>json
-GET https://dindin-api.cyclic.cloud/transacao/2
+            Endpoint: GET https://dindin-api.cyclic.cloud/transacao/2
         </code></pre>
         <p>Exemplo de resposta de sucesso:</p>
         <pre><code>json
@@ -314,7 +314,7 @@ HTTP Status 200 / 201 / 204
         </code></pre>
 
         <h2>Cadastrar Transação para o Usuário Logado</h2>
-        <h3>POST https://dindin-api.cyclic.cloud/transacao</h3>
+        <h3>Endpoint: POST https://dindin-api.cyclic.cloud/transacao</h3>
         <p>Essa rota permite ao usuário logado cadastrar uma nova transação associada a eles.</p>
 
         <h3>Requisição:</h3>
@@ -336,7 +336,7 @@ HTTP Status 200 / 201 / 204
         <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação recém-cadastrada, incluindo o seu ID.</p>
         <p>Exemplo de requisição:</p>
         <pre><code>json
-POST https://dindin-api.cyclic.cloud/transacao
+            Endpoint: POST https://dindin-api.cyclic.cloud/transacao
 {
     "tipo": "entrada",
     "descricao": "Salário",
@@ -360,7 +360,7 @@ HTTP Status 200 / 201 / 204
         </code></pre>
 
         <h2>Atualizar Transação do Usuário Logado</h2>
-        <h3>PUT https://dindin-api.cyclic.cloud/transacao/:id</h3>
+        <h3>Endpoint: PUT - https://dindin-api.cyclic.cloud/transacao/:id</h3>
         <p>Essa rota permite ao usuário logado atualizar uma transação existente associada a eles.</p>
 
         <h3>Requisição:</h3>
@@ -382,7 +382,7 @@ HTTP Status 200 / 201 / 204
         <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta conterá um objeto representando os detalhes da transação atualizada.</p>
         <p>Exemplo de requisição:</p>
         <pre><code>json
-PUT https://dindin-api.cyclic.cloud/transacao/5
+            Endpoint: PUT https://dindin-api.cyclic.cloud/transacao/5
 {
     "tipo": "saida",
     "descricao": "Compra de eletrônicos",
@@ -406,7 +406,7 @@ HTTP Status 200 / 201 / 204
         </code></pre>
 
         <h2>Excluir Transação do Usuário Logado</h2>
-        <h3>DELETE https://dindin-api.cyclic.cloud/transacao/:id</h3>
+        <h3>Endpoint: DELETE - https://dindin-api.cyclic.cloud/transacao/:id</h3>
         <p>Essa rota permite ao usuário logado excluir uma transação existente associada a eles.</p>
 
         <h3>Requisição:</h3>
@@ -419,7 +419,7 @@ HTTP Status 200 / 201 / 204
         <p>Em caso de sucesso (HTTP Status 200 / 201 / 204), o corpo da resposta será vazio.</p>
         <p>Exemplo de requisição:</p>
         <pre><code>json
-DELETE https://dindin-api.cyclic.cloud/transacao/5
+            Endpoint: DELETE https://dindin-api.cyclic.cloud/transacao/5
         </code></pre>
         <p>Exemplo de resposta de sucesso:</p>
         <pre><code>json
