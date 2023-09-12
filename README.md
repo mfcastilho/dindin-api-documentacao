@@ -1,6 +1,6 @@
 # Documentação - Dindin API
 
-## Este repositório é o projeto desenvolvido para ser usado como documentação da Dindin API.
+## Este repositório é um projeto desenvolvido para ser usado como documentação da Dindin API.
 - Repositório da Dindin API: <a href="https://github.com/mfcastilho/dindin-api" target="_blank">aqui</a>
 - Link da documentação da API: <a href="https://mfcastilho.github.io/dindin-api-documentacao/" target="_blank">aqui</a>
 
